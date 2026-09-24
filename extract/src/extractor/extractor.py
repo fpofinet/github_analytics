@@ -30,15 +30,12 @@ def fetch_repo(user_name):
                 response.raise_for_status()
                 rates.append(response.json()) 
                 print(f"Recuperation des repositories de : {user_name} ==>  page : {page}")
-                logging.info(f"Recuperation des des repositories de {user_name}")
-        #print(rates)
-        #print(type(response.json()))
-        #return response.json()
+                logging.info(f"Recuperation des repositories de : {user_name} ==>  page : {page}")
     except requests.exceptions.RequestException as e:
         logging.error(f"Echec de recuperation des repositories de  {user_name} : {e}")
         return None
 
-    print(rates)
+    # print(rates)
     return rates
 
 def fetch_issues(owner,repo):
