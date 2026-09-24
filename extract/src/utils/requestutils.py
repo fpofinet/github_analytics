@@ -26,7 +26,7 @@ def extract_query_parm (url):
 
 def extract_last_page_url(header):
     """
-        Cette fonction permetde verifier et d'extraire l'url de la derniere page.
+        Cette fonction permet de verifier et d'extraire l'url de la derniere page.
         Elle prend en parametre la valeur du header link et renvoi
         1- une chaine contenant l'url de la derniere page si elle existe
         2- None si aucune url contenant a la derniere page n'est trouver dans 
