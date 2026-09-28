@@ -1,13 +1,25 @@
 """
     Ce module contient toute les fonctions utilitaire necessaire a l'extraction
 """
+import ast
+import logging
 
-def flatten_repo_data(repos_data):
+def get_repo_names(repos_data_file_path):
     """
-        Cette fonction permet d'applatir la liste contenant les repositories
-        Elle prend en parametre la liste imbrique contenant les repositories et
-        renvoie une liste applatit de niveau 1
+        Cette fonction permet recuperer le name de tout les repositories
+        Elle prend en parametre la liste contenant les dictionnaire des repositories
+        et renvoie une liste contenant le name des repositories
     """
+    repo_names = list()
+    try:
+        with open(repos_data_file_path, "r",encoding='utf-8') as file:
+            lines = file.readlines()
+            for line in lines:
+                repo_names.append(ast.literal_eval(line)["name"])
+    except Exception as e:
+        logging.error(f"Erreur lors de la recuperation de non de repository : {e}")
+        return None
+    return repo_names
 
 def extract_repository_name(repos):
     """
