@@ -1,2 +1,4 @@
 /extract/extract_venv
 /data
+/extract/src/utils/__pycache__
+/extract/src/extractor/__pycache__/
