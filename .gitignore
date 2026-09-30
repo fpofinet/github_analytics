@@ -2,4 +2,6 @@
 /data
 /extract/src/utils/__pycache__
 /extract/src/extractor/__pycache__/
-/pipeline.log
+/extract/src/formatter/__pycache__/
+/extract/src/loader/__pycache__/
+/logs/pipeline.log
