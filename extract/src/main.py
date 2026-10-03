@@ -1,5 +1,6 @@
 import extractor.extractor as ex
 import formatter.formatter as ft
+import loader.loader as ld
 import json
 import logging
 
@@ -39,7 +40,9 @@ print(f'################## LANCEMENT DE L"EXTRACTION DES DONNEES ###############
 #     json.dump(issues_data, f, ensure_ascii=False, indent=4)
 
 
-#ft.format_repos_data(REPO_RAW_TEMP_FILE_PATH,REPO_FORMATTED_FILE_PATH)
-ft.format_issues_data(ISSUES_RAW_TEMP_FILE_PATH,ISSUES_FORMATTED_FILE_PATH)
+# #ft.format_repos_data(REPO_RAW_TEMP_FILE_PATH,REPO_FORMATTED_FILE_PATH)
+# ft.format_issues_data(ISSUES_RAW_TEMP_FILE_PATH,ISSUES_FORMATTED_FILE_PATH)
 
+
+ld.load_repositories(REPO_FORMATTED_FILE_PATH)
 print(f'################## FIN DE L"EXTRACTION DES DONNEES ###################')

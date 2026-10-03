@@ -4,4 +4,4 @@
 /extract/src/extractor/__pycache__/
 /extract/src/formatter/__pycache__/
 /extract/src/loader/__pycache__/
-/logs/pipeline.log
+/logs
