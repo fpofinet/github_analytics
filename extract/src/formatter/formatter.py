@@ -25,7 +25,7 @@ def format_repos_data(raw_data_file_path,formatted_data_file_path):
             lines = file.readlines()
             for line in lines:
                 repos_datas.append(ast.literal_eval(line))
-        logging.error(f"Lecture du fichier {raw_data_file_path} terminée avec succès")
+        logging.info(f"Lecture du fichier {raw_data_file_path} terminée avec succès")
     except Exception as e:
         logging.error(f"Erreur lors de la lecture du fichier des repositories {raw_data_file_path} : {e}")
     try:
@@ -34,7 +34,7 @@ def format_repos_data(raw_data_file_path,formatted_data_file_path):
         #on selectionne uniquement les colonnes importantes et on sauvegarde cela dans un fichier csv
         df = df[selected_columns]
         df.to_csv(formatted_data_file_path)
-        logging.error(f"Repositories formatées chargées avec succès dans le fichier {formatted_data_file_path}")
+        logging.info(f"Repositories formatées chargées avec succès dans le fichier {formatted_data_file_path}")
     except Exception as e :
         logging.error(f"Erreur lors du chargement des repositories : {e}")
     
@@ -49,7 +49,7 @@ def format_issues_data(raw_data_file_path,formatted_data_file_path):
     try:
         with open(raw_data_file_path, 'r',encoding='utf-8') as f:
             issues_data = json.loads(f.read())
-        logging.error(f"Lecture du fichier {raw_data_file_path} terminée avec succès")
+        logging.info(f"Lecture du fichier {raw_data_file_path} terminée avec succès")
     except Exception as e:
         logging.error(f"Erreur lors du chargement des repositories : {e}")
     
@@ -67,6 +67,6 @@ def format_issues_data(raw_data_file_path,formatted_data_file_path):
         #on selectionne uniquement les colonnes importantes et on sauvegarde cela dans un fichier csv
         df = df[selected_columns]
         df.to_csv(formatted_data_file_path)
-        logging.error(f"Issues formatées chargées avec succès dans le fichier {formatted_data_file_path}")
+        logging.info(f"Issues formatées chargées avec succès dans le fichier {formatted_data_file_path}")
     except Exception as e :
             logging.error(f"Erreur lors du chargement des issues : {e}")
